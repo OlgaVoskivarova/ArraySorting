@@ -23,10 +23,13 @@ public class Main {
           isSorted = true;
             for (int i = 0; i < events.length-1 ; i++) {
                 if (events[i].getYear() > events[i+1].getYear()){
+                    if (events[i].getYear() < events[i+1].getYear()){
+
+                    }
                     isSorted = false;
-                    buffer = events[i].getYear();
-                    events[i].getYear() = events[i+1].getYear();
-                    events[i+1].getYear() =buffer;
+                    buffer = events[i];
+                    events[i] = events[i+1];
+                    events[i+1] =buffer;
 
                 }
             }
@@ -35,4 +38,5 @@ public class Main {
         System.out.println(Arrays.toString(events));
 
     }
+
 }
